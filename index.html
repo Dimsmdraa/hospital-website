@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Beranda - Cipta Hospital Indonesia</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .hero {
+      background: linear-gradient(to right, #007bff, #0056b3);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 3rem;
+    }
+    footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    /* === Tim Dokter Hover  === */
+    .doctor-card {
+      transition: transform 0.3s ease;
+    }
+    .doctor-card:hover {
+      transform: scale(1.03);
+    }
+    .doctor-img {
+      transition: transform 0.3s ease;
+      width: 100%;
+      height: 420px;
+      object-position: top ;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+    .doctor-card:hover .doctor-img {
+      transform: scale(1.08);
+    }
+    .doctor-desc {
+      display: none;
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    .doctor-card:hover .doctor-desc {
+      display: block;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Cipta Hospital</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Beranda</a></li>
+          <li class="nav-item"><a href="about.html" class="nav-link">Tentang</a></li>
+          <li class="nav-item"><a href="layanan.html" class="nav-link">Layanan</a></li>
+          <li class="nav-item"><a href="jadwal.html" class="nav-link">Jadwal</a></li>
+          <li class="nav-item"><a href="kontak.html" class="nav-link">Kontak</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero mt-5">
+    <div class="container">
+      <h1>Selamat Datang di Cipta Hospital</h1>
+      <p class="lead">Pelayanan kesehatan terbaik untuk Anda dan keluarga.</p>
+      <a href="layanan.html" class="btn btn-light btn-lg mt-3">Lihat Layanan</a>
+    </div>
+  </section>
+
+  <!-- Informasi Layanan -->
+  <div class="container my-5">
+    <div class="row text-center">
+      <div class="col-md-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">Layanan 24 Jam</h4>
+            <p class="card-text">IGD, dokter umum dan spesialis siap setiap saat untuk kebutuhan darurat.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mt-4 mt-md-0">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">Dokter Profesional</h4>
+            <p class="card-text">Tim medis berpengalaman dan bersertifikat nasional dan internasional.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mt-4 mt-md-0">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title">Fasilitas Modern</h4>
+            <p class="card-text">Teknologi terkini untuk diagnosa dan perawatan maksimal bagi pasien.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tim Dokter Unggulan -->
+  <div class="container my-5">
+    <h2 class="text-center mb-4">Tim Medis Unggulan</h2>
+    <div class="row text-center">
+
+      <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow doctor-card">
+          <img src="img/dokter1.jpeg" class="img-fluid doctor-img" alt="dr. Yoo Yeon-seok">
+          <div class="card-body">
+            <h6 class="card-title mb-0">dr. Yoo Yeon-seok</h6>
+            <small class="text-muted">Dokter Umum</small>
+            <p class="doctor-desc small mt-2 mb-0">
+              Berpengalaman 8 tahun. Fokus pada pemeriksaan umum dan gizi keluarga.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow doctor-card">
+          <img src="img/dokter2.jpeg" class="img-fluid doctor-img" alt="dr. Go Youn-jung">
+          <div class="card-body">
+            <h6 class="card-title mb-0">dr. Go Youn-jung, Sp.PD</h6>
+            <small class="text-muted">Spesialis Penyakit Dalam</small>
+            <p class="doctor-desc small mt-2 mb-0">
+              Ahli penanganan diabetes, hipertensi, dan penyakit dalam lainnya.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4 mb-4">
+        <div class="card border-0 shadow doctor-card">
+          <img src="img/dokter3.jpeg" class="img-fluid doctor-img" alt="dr. Jeon Mi-do">
+          <div class="card-body">
+            <h6 class="card-title mb-0">dr. Jeon Mi-do, Sp.B</h6>
+            <small class="text-muted">Spesialis Bedah Umum</small>
+            <p class="doctor-desc small mt-2 mb-0">
+              Berpengalaman menangani operasi umum dan bedah-bedah.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Sambutan Kepala Rumah Sakit -->
+<div class="container my-5 py-4 bg-light rounded shadow-sm">
+  <div class="row align-items-center">
+    <div class="col-md-4 text-center mb-3 mb-md-0">
+      <img src="img/DirutRS.jpeg" class="img-fluid rounded shadow" style="max-height: 300px;" alt="Kepala Rumah Sakit">
+    </div>
+    <div class="col-md-8">
+      <h2 class="mb-3">Sambutan Kepala Rumah Sakit</h2>
+      <p>Halo semuanya!<br>
+        Selamat datang di Cipta Hospital, rumah sakit yang gak cuma nyembuhin, tapi juga nyenengin.
+        Di sini kamu bakal ketemu dokter-dokter dari korea, perawat ramah, cakep-cakep lagi.
+        Kami tahu ke rumah sakit itu nggak pernah jadi liburan impian, tapi kalau kamu harus mampir, pastikan itu ke tempat yang peduli sama kamu secara medis dan manusiawi.
+        Yuk jaga kesehatan geess!</p>
+      <p class="fw-bold mb-0">dr. Dimas R Samudra</p>
+      <small class="text-muted">Direktur Utama Cipta Hospital Indonesia</small>
+    </div>
+  </div>
+</div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Cipta Hospital Indonesia | by Dimassamudraa. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

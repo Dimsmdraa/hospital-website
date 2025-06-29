@@ -1,0 +1,63 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+header {
+  background-color: #0275d8;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 20px;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.doctor-card {
+  transition: transform 0.3s ease;
+}
+.doctor-card:hover {
+  transform: scale(1.03);
+}
+
+.doctor-img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 4; /* Tambahkan ini */
+  object-fit: contain; /* Biar tidak kepotong */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.doctor-card:hover .doctor-img {
+  transform: scale(1.1);
+}
+
+.doctor-card:hover .doctor-overlay {
+  transform: translateY(0);
+}
+
+.doctor-card {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
