@@ -33,21 +33,28 @@
       <p><strong>WhatsApp:</strong> +62 813-8468-1348</p>
     </div>
     <div class="col-md-6">
-      <form>
+      <form action="https://formsubmit.co/dimassamudraa5566@gmail.com" method="POST">
         <div class="mb-3">
-          <label for="nama" class="form-label">Nama</label>
-          <input type="text" class="form-control" id="nama">
+        <label for="nama" class="form-label">Nama</label>
+        <input type="text" class="form-control" id="nama" name="nama" required>
         </div>
         <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" id="email">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
         </div>
         <div class="mb-3">
-          <label for="pesan" class="form-label">Pesan</label>
-          <textarea class="form-control" id="pesan" rows="4"></textarea>
+        <label for="pesan" class="form-label">Pesan</label>
+        <textarea class="form-control" id="pesan" name="pesan" rows="4" required></textarea>
         </div>
+        <!-- Optional: disable captcha -->
+        <input type="hidden" name="_captcha" value="false">
+
+        <!-- Optional: redirect to custom page -->
+        <input type="hidden" name="_next" value="https://dimsmdraa.github.io/hospital-website/sukses.html">
+
         <button type="submit" class="btn btn-primary">Kirim Pesan</button>
       </form>
+
     </div>
   </div>
 </div>
