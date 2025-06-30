@@ -5,32 +5,53 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Jadwal Dokter - Cipta Hospital</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@4.1.1/animate.min.css"/>
 
   <style>
     body.dark-mode {
-  background-color: #121212;
-  color: #f1f1f1;
-}
+      background-color: #121212;
+      color: #f1f1f1;
+    }
 
-.dark-mode .card,
-.dark-mode .navbar,
-.dark-mode footer,
-.dark-mode .border {
-  background-color: #1e1e1e !important;
-  color: #f1f1f1;
-  border-color: #333;
-}
+    .dark-mode .card,
+    .dark-mode .navbar,
+    .dark-mode footer,
+    .dark-mode .border {
+      background-color: #1e1e1e !important;
+      color: #f1f1f1;
+      border-color: #333;
+    }
 
-.dark-mode .navbar a,
-.dark-mode .card-title,
-.dark-mode .card-text {
-  color: #f1f1f1 !important;
-}
+    .dark-mode .navbar a,
+    .dark-mode .card-title,
+    .dark-mode .card-text {
+      color: #f1f1f1 !important;
+    }
 
+    /* Hover row highlight */
+    .table tbody tr:hover {
+      background-color: #f1f9ff;
+    }
+
+    /* Avatar image style */
+    .doctor-avatar {
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .footer {
+      background-color: #f8f9fa;
+      text-align: center;
+      padding: 20px;
+    }
   </style>
 </head>
 <body>
 
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container">
     <a class="navbar-brand" href="index.html">Cipta Hospital</a>
@@ -47,10 +68,13 @@
   </div>
 </nav>
 
-<div class="container py-5">
-  <h2 class="text-center mb-4">Jadwal Dokter</h2>
+<!-- Jadwal Dokter -->
+<div class="container py-5 animate__animated animate__fadeIn">
+  <h2 class="text-center mb-2">Jadwal Dokter</h2>
+  <p class="text-center text-muted mb-4">Lihat jadwal praktik dokter spesialis dan umum di Cipta Hospital</p>
+
   <div class="table-responsive">
-    <table class="table table-bordered table-striped">
+    <table class="table table-bordered table-striped table-hover align-middle">
       <thead class="table-primary">
         <tr>
           <th>Nama Dokter</th>
@@ -61,32 +85,68 @@
       </thead>
       <tbody>
         <tr>
-          <td>dr. Yoo Yeon-seok</td>
+          <td>
+            <img src="img/dokter1.jpeg" class="doctor-avatar" alt="dr. Yoo Yeon-seok">
+            dr. Yoo Yeon-seok
+          </td>
           <td>Umum</td>
           <td>Senin - Jumat</td>
           <td>08.00 - 14.00</td>
         </tr>
         <tr>
-          <td>dr. Go Youn-jung, Sp.PD</td>
-          <td>Penyakit Dalam</td>
+          <td>
+            <img src="img/dokter2.jpeg" class="doctor-avatar" alt="dr. Go Youn-jung">
+            dr. Go Youn-jung, Sp.PD
+          </td>
+          <td>Spesialis Penyakit Dalam</td>
           <td>Selasa & Kamis</td>
           <td>10.00 - 16.00</td>
         </tr>
         <tr>
-          <td>dr. Jeon Mi-do, Sp.B</td>
-          <td>Bedah Umum</td>
+          <td>
+            <img src="img/dokter3.jpeg" class="doctor-avatar" alt="dr. Jeon Mi-do">
+            dr. Jeon Mi-do, Sp.B
+          </td>
+          <td>Spesialis Bedah Umum</td>
           <td>Senin - Sabtu</td>
           <td>08.00 - 14.00</td>
         </tr>
+        <tr>
+          <td>
+            <img src="img/dookter4.png" class="doctor-avatar" alt="dr. Kim Tae-ri">
+            dr. Kim Tae-ri, Sp.A
+          </td>
+          <td>Spesialis Anak</td>
+          <td>Senin, Rabu, Jumat</td>
+          <td>09.00 - 13.00</td>
+        </tr>
+        <tr>
+          <td>
+            <img src="img/dokter5.jpeg" class="doctor-avatar" alt="dr. Park Seo-joon">
+            dr. Park Seo-joon, Sp.OT
+          </td>
+          <td>Spesialis Orthopedi</td>
+          <td>Selasa & Jumat</td>
+          <td>13.00 - 18.00</td>
+        </tr>
+
       </tbody>
     </table>
   </div>
+
+  <!-- CTA -->
+  <div class="text-center mt-4">
+    <p class="mb-2">Ingin melakukan konsultasi atau reservasi jadwal?</p>
+    <a href="kontak.html" class="btn btn-primary">Hubungi Kami</a>
+  </div>
 </div>
 
-<footer class="bg-light text-center p-3">
+<!-- Footer -->
+<footer class="footer">
   <p>&copy; 2025 Cipta Hospital Indonesia | by Dimassamudraa.</p>
 </footer>
 
+<!-- Script Bootstrap + Dark Mode -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   const toggle = document.getElementById('darkToggle');
