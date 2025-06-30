@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Beranda - Cipta Hospital Indonesia</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
   <style>
     .hero {
@@ -23,7 +24,7 @@
       margin-top: 40px;
     }
 
-    /* === Tim Dokter Hover  === */
+    /* === Tim Dokter Hover === */
     .doctor-card {
       transition: transform 0.3s ease;
     }
@@ -34,7 +35,7 @@
       transition: transform 0.3s ease;
       width: 100%;
       height: 420px;
-      object-position: top ;
+      object-position: top;
       border-radius: 8px;
       object-fit: cover;
     }
@@ -50,6 +51,93 @@
       display: block;
       opacity: 1;
     }
+
+    /* === Layanan Hover === */
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: scale(1.05);
+      background-color: #007bff;
+      color: white;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+    .card-hover:hover .card-title,
+    .card-hover:hover .card-text {
+      color: white;
+    }
+
+    /* === Dark Mode === */
+    body.dark-mode {
+      background-color: #121212;
+      color: #f1f1f1;
+    }
+    .dark-mode .card,
+    .dark-mode .navbar,
+    .dark-mode footer,
+    .dark-mode .border,
+    .dark-mode .bg-light {
+      background-color: #1e1e1e !important;
+      color: #f1f1f1 !important;
+      border-color: #333;
+    }
+    .dark-mode .navbar a,
+    .dark-mode .card-title,
+    .dark-mode .card-text,
+    .dark-mode h1,
+    .dark-mode h2,
+    .dark-mode h3,
+    .dark-mode h4,
+    .dark-mode h5,
+    .dark-mode h6,
+    .dark-mode p,
+    .dark-mode li,
+    .dark-mode a {
+      color: #f1f1f1 !important;
+    }
+    .dark-mode .text-muted {
+      color: #bbb !important;
+    }
+    .dark-mode .btn-light {
+      background-color: #333;
+      color: white;
+      border: 1px solid #555;
+    }
+    .dark-mode hr {
+      border-color: #444;
+    }
+
+  .swiper {
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 300px;
+  height: 400px;
+  transition: transform 0.4s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+.swiper-slide-active {
+  transform: scale(1.1);
+  z-index: 2;
+}
+
+  
+</style>
+
   </style>
 </head>
 <body>
@@ -68,6 +156,7 @@
           <li class="nav-item"><a href="layanan.html" class="nav-link">Layanan</a></li>
           <li class="nav-item"><a href="jadwal.html" class="nav-link">Jadwal</a></li>
           <li class="nav-item"><a href="kontak.html" class="nav-link">Kontak</a></li>
+          <button id="darkToggle" class="btn btn-light btn-sm ms-3">🌙</button>
         </ul>
       </div>
     </div>
@@ -86,7 +175,7 @@
   <div class="container my-5">
     <div class="row text-center">
       <div class="col-md-4">
-        <div class="card shadow-sm">
+        <div class="card shadow-sm card-hover">
           <div class="card-body">
             <h4 class="card-title">Layanan 24 Jam</h4>
             <p class="card-text">IGD, dokter umum dan spesialis siap setiap saat untuk kebutuhan darurat.</p>
@@ -94,7 +183,7 @@
         </div>
       </div>
       <div class="col-md-4 mt-4 mt-md-0">
-        <div class="card shadow-sm">
+        <div class="card shadow-sm card-hover">
           <div class="card-body">
             <h4 class="card-title">Dokter Profesional</h4>
             <p class="card-text">Tim medis berpengalaman dan bersertifikat nasional dan internasional.</p>
@@ -102,7 +191,7 @@
         </div>
       </div>
       <div class="col-md-4 mt-4 mt-md-0">
-        <div class="card shadow-sm">
+        <div class="card shadow-sm card-hover">
           <div class="card-body">
             <h4 class="card-title">Fasilitas Modern</h4>
             <p class="card-text">Teknologi terkini untuk diagnosa dan perawatan maksimal bagi pasien.</p>
@@ -159,24 +248,44 @@
     </div>
   </div>
 
-  <!-- Sambutan Kepala Rumah Sakit -->
-<div class="container my-5 py-4 bg-light rounded shadow-sm">
-  <div class="row align-items-center">
-    <div class="col-md-4 text-center mb-3 mb-md-0">
-      <img src="img/Dirut2.jpeg" class="img-fluid rounded shadow" style="max-height: 300px;" alt="Kepala Rumah Sakit">
+  <!--Galeri Rumah Sakit-->
+  <!-- Galeri Swiper Carousel -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">Galeri Rumah Sakit</h2>
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="img/galeri1.jpg" alt="Galeri 1"></div>
+      <div class="swiper-slide"><img src="img/galeri2.jpg" alt="Galeri 2"></div>
+      <div class="swiper-slide"><img src="img/galeri3.jpg" alt="Galeri 3"></div>
+      <div class="swiper-slide"><img src="img/galeri4.jpg" alt="Galeri 4"></div>
+      <div class="swiper-slide"><img src="img/galeri5.jpg" alt="Galeri 5"></div>
+      <div class="swiper-slide"><img src="img/galeri6.jpg" alt="Galeri 6"></div>
     </div>
-    <div class="col-md-8">
-      <h2 class="mb-3">Sambutan Kepala Rumah Sakit</h2>
-      <p>Halo semuanya!<br>
-        Selamat datang di Cipta Hospital, rumah sakit yang gak cuma nyembuhin, tapi juga nyenengin.
-        Di sini kamu bakal ketemu dokter-dokter dari korea, perawat ramah, cakep-cakep lagi behhh.
-        Kami tau ke rumah sakit itu nggak pernah jadi liburan impian, tapi kalau kamu harus mampir, pastikan itu ke tempat yang peduli sama kamu secara medis dan manusiawi.
-        Yuk jaga kesehatan guyss!</p>
-      <p class="fw-bold mb-0">dr. Dimas R Samudra</p>
-      <small class="text-muted">Direktur Utama Cipta Hospital Indonesia</small>
-    </div>
+
+    <!-- Navigasi -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
   </div>
 </div>
+
+  <!-- Sambutan Kepala Rumah Sakit -->
+  <div class="container my-5 py-4 bg-light rounded shadow-sm">
+    <div class="row align-items-center">
+      <div class="col-md-4 text-center mb-3 mb-md-0">
+        <img src="img/Dirut2.jpeg" class="img-fluid rounded shadow" style="max-height: 300px;" alt="Kepala Rumah Sakit">
+      </div>
+      <div class="col-md-8">
+        <h2 class="mb-3">Sambutan Kepala Rumah Sakit</h2>
+        <p>Halo semuanya!<br>
+          Selamat datang di Cipta Hospital, rumah sakit yang gak cuma nyembuhin, tapi juga nyenengin.
+          Di sini kamu bakal ketemu dokter-dokter dari Korea, perawat ramah, cakep-cakep lagi behhh.
+          Kami tau ke rumah sakit itu nggak pernah jadi liburan impian, tapi kalau kamu harus mampir, pastikan itu ke tempat yang peduli sama kamu secara medis dan manusiawi.
+          Yuk jaga kesehatan guyss!</p>
+        <p class="fw-bold mb-0">dr. Dimas R Samudra</p>
+        <small class="text-muted">Direktur Utama Cipta Hospital Indonesia</small>
+      </div>
+    </div>
+  </div>
 
   <!-- Footer -->
   <footer>
@@ -184,5 +293,28 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    toggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggle.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+  <!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    centeredSlides: true,
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+
 </body>
 </html>

@@ -33,9 +33,12 @@ footer {
   bottom: 0;
 }
 
+/* === DOCTOR CARD EFFECT === */
 .doctor-card {
   transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
+
 .doctor-card:hover {
   transform: scale(1.03);
 }
@@ -43,8 +46,8 @@ footer {
 .doctor-img {
   width: 100%;
   height: auto;
-  aspect-ratio: 3 / 4; /* Tambahkan ini */
-  object-fit: contain; /* Biar tidak kepotong */
+  aspect-ratio: 3 / 4;
+  object-fit: contain;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
@@ -57,7 +60,30 @@ footer {
   transform: translateY(0);
 }
 
-.doctor-card {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+/* === LAYANAN CARD HOVER EFFECT === */
+.card-hover {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-hover:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.hover-info {
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+  background-color: #ffffff;
+}
+
+.hover-info:hover {
+  transform: scale(1.05);
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+}
+
+.hover-info:hover h5,
+.hover-info:hover p {
+  color: white;
 }
 
